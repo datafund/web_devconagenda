@@ -25,7 +25,7 @@ jobs:
         id: swarm-feed
         uses: ethersphere/swarm-actions/write-feed@latest
         with:
-          bee-url: https://gateway.dev.fairdatasociety.org/proxy/
+          bee-url: https://gateway.fairdatasociety.org/proxy/
           reference: ${{ steps.swarm-upload.outputs.reference }}
           topic: devconagenda
           signer: ${{ secrets.SIGNER }}
