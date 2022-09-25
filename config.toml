@@ -1,6 +1,7 @@
-baseUrl = "./"
+baseUrl = "https://devconagenda.bzz.link"
 languageCode = 'en-us'
 title = 'Swarm Devcon'
 theme = 'ananke'
 themesDir = './themes'
 publishDir   = "public"
+canonifyURLs = 'true'
