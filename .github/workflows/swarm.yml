@@ -20,10 +20,6 @@ jobs:
           extended: true
       - name: Build
         run: hugo -d public --minify
-      - name: ls
-        run: ls -lsatrh ./public
-      - name: check index
-        run: cat ./public/index.html
       - name: Upload
         id: swarm-upload
         uses: ethersphere/swarm-actions/upload-dir@latest
