@@ -13,14 +13,21 @@ jobs:
         with:
           submodules: false  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 1    # Fetch all history for .GitInfo and .Lastmod
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          # extended: true
+      - name: Build
+        run: hugo -d public --minify
       - name: Upload
         id: swarm-upload
         uses: ethersphere/swarm-actions/upload-dir@latest
         with:
-          bee-url: https://gateway.fairdatasociety.org
+          bee-url: https://gateway.fairdatasociety.org/proxy/
           dir: ./public/
           index-document: index.html
-          error-document: 404/index.html
+          error-document: 404.html
       - name: update feed
         id: swarm-feed
         uses: ethersphere/swarm-actions/write-feed@latest

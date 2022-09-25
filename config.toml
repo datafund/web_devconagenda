@@ -1,1 +1,6 @@
-YmFzZVVSTCA9ICdodHRwOi8vZXhhbXBsZS5vcmcvJwpsYW5ndWFnZUNvZGUgPSAnZW4tdXMnCnRpdGxlID0gJ015IE5ldyBIdWdvIFNpdGUnCnRoZW1lID0gImFuYW5rZSIK
+baseUrl = "./"
+languageCode = 'en-us'
+title = 'Swarm Devcon'
+theme = 'ananke'
+themesDir = './themes'
+publishDir   = "public"
