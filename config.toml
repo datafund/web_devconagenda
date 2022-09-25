@@ -1,4 +1,4 @@
-baseUrl = "https://devconagenda.bzz.link"
+baseUrl = "/"
 languageCode = 'en-us'
 title = 'Swarm Devcon'
 theme = 'ananke'
