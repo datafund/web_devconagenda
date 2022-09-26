@@ -26,7 +26,7 @@ jobs:
         with:
           bee-url: https://gateway.fairdatasociety.org/proxy/
           dir: ./public/
-          index-document: ./democon/index.html
+          index-document: /democon/index.html
           error-document: 404.html
           timeout: 120000
       - name: update feed
