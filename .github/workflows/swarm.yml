@@ -13,12 +13,38 @@ jobs:
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 1    # Fetch all history for .GitInfo and .Lastmod
+      - name: unzip
+        run: |
+             unzip democon.zip -d public/ 
+             cd public/democon/democon
+             mv * ../
+             cd ${GITHUB_WORKSPACE}
+             mv public/democon/media/democon/* public/democon/media/
+#      - name: replace
+#        run: |
+#             ls -lsatrh
+#             find '*' -type f -exec  sed -i 's#/democon##/g' {} +
+      - name: Find and Replace href
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: '/democon/'
+          replace: '/'
+          include: "**"
+          regex: true
+      - name: Find and Replace vitamin d
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: "#efff38"
+          #replace: "#a7b227"
+          replace: "#5f6616"
+          include: "**"
+          regex: true
       - name: Upload
         id: swarm-upload
         uses: ethersphere/swarm-actions/upload-dir@latest
         with:
           bee-url: https://gateway.fairdatasociety.org/proxy/
-          dir: ./public/
+          dir: ./public/democon/
           index-document: index.html
           error-document: 404.html
           timeout: 120000
