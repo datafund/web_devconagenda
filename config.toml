@@ -1,7 +1,0 @@
-baseUrl = "/"
-languageCode = 'en-us'
-title = 'Swarm Devcon'
-theme = 'ananke'
-themesDir = './themes'
-publishDir   = "public"
-canonifyURLs = 'true'
