@@ -19,6 +19,9 @@ jobs:
              cd public/democon/democon
              mv * ../
              cd ${GITHUB_WORKSPACE}
+      - name: unzip
+        continue-on-error: true
+        run: |
              mv public/democon/media/democon/* public/democon/media/
 #      - name: replace
 #        run: |
