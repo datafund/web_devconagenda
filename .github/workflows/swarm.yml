@@ -66,4 +66,5 @@ jobs:
       - name: purge cache
         env:
           TOKEN: '${{ secrets.purge_token }}'
-        run: curl -s https://fairos.fairdatasociety.org/deploy/purge?token=$TOKEN -H "site: devconagenda.link"
+        run: |
+          curl -s https://fairos.fairdatasociety.org/deploy/purge?token=$TOKEN -H "site: devconagenda.link"
