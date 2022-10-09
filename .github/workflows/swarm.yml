@@ -43,7 +43,7 @@ jobs:
           dir: ./public/devcon-vi-2022/
           index-document: index.html
           error-document: 404.html
-          timeout: 600000 
+          timeout: 1200000 
       - name: update feed
         id: swarm-feed
         uses: ethersphere/swarm-actions/write-feed@latest
