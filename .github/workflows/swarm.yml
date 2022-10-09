@@ -70,3 +70,7 @@ jobs:
           echo "feed ref: " ${{ steps.swarm-feed.outputs.reference }}
           echo "CID: " ${{ steps.swarm-cid.outputs.cid }}
           echo 'Feed Manifest: ${{ steps.swarm-feed.outputs.manifest }}'
+      - name: purge cache
+        env:
+          TOKEN: '${{ secrets.purge_token }}'
+        run: curl -s https://fairos.fairdatasociety.org/deploy/purge?token=$TOKEN -H "site: devconagenda.link"
