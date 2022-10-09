@@ -16,7 +16,7 @@ jobs:
       - name: unzip
         run: |
              unzip democon.zip -d public/ 
-             cd public/devcon-vi-2022
+             cd public/devcon-vi-2022/devcon-vi-2022
              mv * ../
              cd ${GITHUB_WORKSPACE}
       - name: unzip
