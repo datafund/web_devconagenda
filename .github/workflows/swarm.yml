@@ -16,13 +16,13 @@ jobs:
       - name: unzip
         run: |
              unzip democon.zip -d public/ 
-             cd public/democon/democon
+             cd public/devcon-vi-2022
              mv * ../
              cd ${GITHUB_WORKSPACE}
       - name: unzip
         continue-on-error: true
         run: |
-             mv public/democon/media/democon/* public/democon/media/
+             mv public/devcon-vi-2022/media/devcon-vi-2022/* public/devcon-vi-2022/media/
 #      - name: replace
 #        run: |
 #             ls -lsatrh
@@ -30,18 +30,11 @@ jobs:
       - name: Find and Replace href
         uses: jacobtomlinson/gha-find-replace@v2
         with:
-          find: '/democon/'
+          find: '/devcon-vi-2022/'
           replace: '/'
           include: "**"
           regex: true
-      - name: Find and Replace vitamin d
-        uses: jacobtomlinson/gha-find-replace@v2
-        with:
-          find: "#efff38"
-          #replace: "#a7b227"
-          replace: "#5f6616"
-          include: "**"
-          regex: true
+  
       - name: Upload
         id: swarm-upload
         uses: ethersphere/swarm-actions/upload-dir@latest
