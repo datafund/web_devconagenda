@@ -23,10 +23,9 @@ jobs:
         continue-on-error: true
         run: |
              mv public/devcon-vi-2022/media/devcon-vi-2022/* public/devcon-vi-2022/media/
-#      - name: replace
-#        run: |
-#             ls -lsatrh
-#             find '*' -type f -exec  sed -i 's#/democon##/g' {} +
+      - name: shorten
+        run: |
+            mv public/devcon-vi-2022/media/avatars/EDITED-13219_HH-68925515_Christian_FORTA_PXL_20220420_184714861_exported_1650511_jBTHkzF.jpg public/devcon-vi-2022/media/avatars/Christian_FORTA_PXL_exported_1650511_jBTHkzF.jpg
       - name: Find and Replace href
         uses: jacobtomlinson/gha-find-replace@v2
         with:
@@ -34,7 +33,15 @@ jobs:
           replace: '/'
           include: "**"
           regex: true
-  
+
+      - name: Find and Replace shortened
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: 'EDITED-13219_HH-68925515_Christian_FORTA_PXL_20220420_184714861_exported_1650511_jBTHkzF'
+          replace: 'Christian_FORTA_PXL_exported_1650511_jBTHkzF'
+          include: "**"
+          regex: true
+
       - name: Upload
         id: swarm-upload
         uses: ethersphere/swarm-actions/upload-dir@latest
